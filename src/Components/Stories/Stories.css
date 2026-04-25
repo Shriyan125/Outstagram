@@ -1,0 +1,136 @@
+.stories-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.stories__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 50px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.stories__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll Buttons */
+.stories__scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.stories__scroll-btn:hover {
+  background: var(--bg-tertiary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.stories__scroll-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.stories__scroll-btn--left { left: 8px; }
+.stories__scroll-btn--right { right: 8px; }
+
+/* Individual Story */
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.story-item:hover {
+  transform: scale(1.05);
+}
+
+.story-item__ring {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--story-ring);
+  transition: var(--transition);
+}
+
+.story-item__ring--seen {
+  background: var(--bg-tertiary);
+}
+
+.story-item__ring--own {
+  background: none;
+  border: 2px dashed var(--border-color);
+}
+
+.story-item__avatar-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-tertiary);
+}
+
+.story-item__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.story-item__add-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  border: 2px solid var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.story-item__add-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.story-item__username {
+  font-size: 12px;
+  color: var(--text-primary);
+  max-width: 68px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
